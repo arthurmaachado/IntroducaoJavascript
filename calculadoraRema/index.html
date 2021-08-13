@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <ul class="cientifica">
+            <li class="cientifica" id="padrao"><i class="fas fa-bars"></i>Padrao</li>
+            <li class="cientifica" id="cientifica"><i class="fas fa-flask"></i>Cientifica</li>
+        </ul>
+    </div>
+    
+    <div class="calculadora">
+        <div class="display">
+            <div class="operador-anterior"></div>
+            <div class="operador-atual"></div>
+            
+        </div>
+        
+       
+            <button class="clearE-operation">CE</button>
+            <button class="clear-operation" onclick="clear();">C</button>
+            <button id="backspace"><i class="fas fa-backspace"></i></button>
+            <button class="operando">1/X</button>
+            <button class="operando">X^2</button>
+            <button class="operando-especial">- / +</button>
+            <button class="operando">÷</button>
+            <button class="num">7</button>
+            <button class="num">8</button>
+            <button class="num">9</button>
+            <button class="operando">*</button>
+            <button class="num">4</button>
+            <button class="num">5</button>
+            <button class="num">6</button>
+            <button class="operando">-</button>
+            <button class="num">1</button>
+            <button class="num">2</button>
+            <button class="num">3</button>
+            <button class="operando">+</button>
+            <button class="num">0</button>
+            <button class="num">.</button>
+            <button id="equal">=</button>
+            
+            
+        </div>
+    </div>
+    <div class="cientifica-menu">
+        <div class="wraper">
+            <button class="operando">log</button>
+            <button class="operando">10^x</button>
+            <button class="operando">√x</button>
+            <button class="operando">x^y</button>
+            <button class="num">e</button>
+            <button class="num">π</button>
+            <button class="operando">n!</button>
+            <button class="operando">mod</button>
+            <button class="operando">|x|</button>
+            <button class="operando">exp</button>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
