@@ -41,7 +41,9 @@ class Calculadora {
     }
 
     escolhaOperacao(operacao) {
-
+        if(this.operadorAnterior !== ''){
+            this.calculo()
+        }
         this.operacao = operacao
         this.operadorAnterior = this.operadorAtual
         this.operadorAtual = ''
@@ -103,6 +105,15 @@ class Calculadora {
                     resultado = anterior
                 }
                 break
+            case 'x^y':
+                resultado = Math.pow(anterior,atual)
+                break
+            case 'n!':
+                resultado = 1
+                for (var contador=1; contador< anterior; contador ++) {
+                    resultado *= contador
+                }
+                break
             default:
                 return
         }
@@ -124,14 +135,18 @@ class Calculadora {
             op = '^2'
         } else if (op == '10^x'){
             op = '10^'
+        } else if (op == 'n!') {
+            op = '!'
         }
         this.displayAtual.innerText = this.operadorAtual
         if(op=='√' || op == '1/' || op == '10^' || op == 'log' ){
             this.displayAtual.innerText = op + this.operadorAnterior
-        } else if (op == '^2'){
+        } else if (op == '^2' || op == '!'){
             this.displayAtual.innerText = this.operadorAnterior + op
         } else if (op == '|x|'){
             this.displayAtual.innerText = '|' + this.operadorAnterior + '|'
+        } else if (op == 'x^y') {
+            this.displayAtual.innerText = this.operadorAnterior + '^' + this.operadorAtual
         }
         else {
             this.displayAnterior.innerText = this.operadorAnterior + op
